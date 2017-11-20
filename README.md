@@ -21,3 +21,8 @@ To update the service file ---
 
 ###### Restarting Hubot
 To restart Hubot: `service hubot restart`
+
+###### Notes
+ENV Variables should not include any quotes or escaping (Correct Example: `Environment=HUBOT_DARK_SKY_DEFAULT_LOCATION=90210`)
+
+For more information on preventing restart loops with StartLimitInterval & StartLimitBurst, [https://www.freedesktop.org/software/systemd/man/systemd.unit.html#StartLimitIntervalSec=](please see the manual).
