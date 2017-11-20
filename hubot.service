@@ -15,6 +15,8 @@ User=<Your User>
 
 Restart=always
 RestartSec=10
+StartLimitInterval=400
+StartLimitBurst=3
 
 Environment=HUBOT_SLACK_TOKEN=<token>
 
