@@ -1,0 +1,24 @@
+; Hubot systemd service file
+; 1. Place in e.g. `/etc/systemd/system/hubot.service`
+; 2. To load and start, run `systemctl daemon-reload` and `service hubot start`.
+; 3. To edit, make sure you've stopped the service with `service hubot stop`
+
+[Unit]
+Description=Hubot
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=<Hubot Directory>
+User=<Your User>
+
+Restart=always
+RestartSec=10
+
+Environment=HUBOT_SLACK_TOKEN=<token>
+
+ExecStart=/bin/bash -a -c 'cd <Hubot Directory> && ./bin/hubot --adapter slack'
+
+[Install]
+WantedBy=multi-user.target
