@@ -20,7 +20,7 @@ StartLimitBurst=3
 
 Environment=HUBOT_SLACK_TOKEN=<token>
 
-ExecStart=/bin/bash -a -c 'cd <Hubot Directory> && ./bin/hubot --adapter slack'
+ExecStart=/bin/bash -a -c 'cd <Hubot Directory> && ./bin/hubot --adapter slack > ~/Logs/hubot.log 2>&1'
 
 [Install]
 WantedBy=multi-user.target

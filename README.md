@@ -9,7 +9,8 @@ A systemd service file to start Hubot. Handles reboots and crashes.
 5. Verify Hubot is active in Slack
 
 ###### Viewing Console Output
-Hubot's console output can be viewed with: `tail /var/log/syslog`
+Hubot's console output is directed to `~/Logs/hubot.log` by default. To change this location, edit the `ExecStart` entry (line 23).
+The log is cleared each time the service is ran. If you want to keep a running log, change `>` to `>>` in the `ExecStart` entry (line 23).
 
 ###### Updating
 To update the service file ---
